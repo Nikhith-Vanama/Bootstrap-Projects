@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Delivery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .card-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="#">YummyFood</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1 class="mb-4">Our Menu</h1>
+
+  <!-- Filter Buttons -->
+  <div class="mb-4 text-center">
+    <div class="btn-group" role="group" aria-label="Category filter">
+      <button type="button" class="btn btn-outline-success active" data-filter="all">All</button>
+      <button type="button" class="btn btn-outline-success" data-filter="pizza">Pizza</button>
+      <button type="button" class="btn btn-outline-success" data-filter="burger">Burger</button>
+      <button type="button" class="btn btn-outline-success" data-filter="drink">Drink</button>
+    </div>
+  </div>
+
+  <!-- Menu Cards -->
+  <div class="row g-4" id="menuCards">
+
+    <!-- Pizza -->
+    <div class="col-md-4 menu-item" data-category="pizza">
+      <div class="card position-relative">
+        <span class="badge bg-danger card-badge">Spicy</span>
+        <img src="https://images.unsplash.com/photo-1601924582977-d31f8254703a?auto=format&fit=crop&w=400&q=80" 
+          class="card-img-top" alt="Pepperoni Pizza" />
+        <div class="card-body">
+          <h5 class="card-title">Pepperoni Pizza</h5>
+          <p class="card-text">Classic pepperoni with mozzarella cheese and tomato sauce.</p>
+          <p class="card-text fw-bold">$12.99</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="pizza">
+      <div class="card position-relative">
+        <span class="badge bg-success card-badge">New</span>
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80" 
+          class="card-img-top" alt="Veggie Pizza" />
+        <div class="card-body">
+          <h5 class="card-title">Veggie Pizza</h5>
+          <p class="card-text">Loaded with fresh veggies, olives, and mozzarella.</p>
+          <p class="card-text fw-bold">$11.49</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Burger -->
+    <div class="col-md-4 menu-item" data-category="burger">
+      <div class="card position-relative">
+        <span class="badge bg-warning text-dark card-badge">Popular</span>
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80" 
+          class="card-img-top" alt="Cheeseburger" />
+        <div class="card-body">
+          <h5 class="card-title">Cheeseburger</h5>
+          <p class="card-text">Juicy beef patty with cheddar cheese, lettuce, and tomato.</p>
+          <p class="card-text fw-bold">$9.99</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="burger">
+      <div class="card position-relative">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" 
+          class="card-img-top" alt="Chicken Burger" />
+        <div class="card-body">
+          <h5 class="card-title">Chicken Burger</h5>
+          <p class="card-text">Grilled chicken breast with lettuce and mayo.</p>
+          <p class="card-text fw-bold">$10.49</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drinks -->
+    <div class="col-md-4 menu-item" data-category="drink">
+      <div class="card position-relative">
+        <span class="badge bg-info text-dark card-badge">Cold</span>
+        <img src="https://images.unsplash.com/photo-1551024601-bec78faa5ec6?auto=format&fit=crop&w=400&q=80" 
+          class="card-img-top" alt="Lemonade" />
+        <div class="card-body">
+          <h5 class="card-title">Lemonade</h5>
+          <p class="card-text">Freshly squeezed lemonade with mint leaves.</p>
+          <p class="card-text fw-bold">$3.99</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 menu-item" data-category="drink">
+      <div class="card position-relative">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80" 
+          class="card-img-top" alt="Iced Coffee" />
+        <div class="card-body">
+          <h5 class="card-title">Iced Coffee</h5>
+          <p class="card-text">Chilled coffee with ice and cream.</p>
+          <p class="card-text fw-bold">$4.49</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Order Form -->
+  <section class="mt-5">
+    <h2 class="mb-4">Place Your Order</h2>
+    <form id="orderForm" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="customerName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="customerName" required />
+        <div class="invalid-feedback">Please enter your full name.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="customerEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="customerEmail" required />
+        <div class="invalid-feedback">Please provide a valid email.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="customerAddress" class="form-label">Delivery Address</label>
+        <textarea class="form-control" id="customerAddress" rows="3" required></textarea>
+        <div class="invalid-feedback">Please enter your address.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="orderItem" class="form-label">Select Menu Item</label>
+        <select class="form-select" id="orderItem" required>
+          <option value="" selected disabled>Select an item</option>
+          <option value="Pepperoni Pizza">Pepperoni Pizza</option>
+          <option value="Veggie Pizza">Veggie Pizza</option>
+          <option value="Cheeseburger">Cheeseburger</option>
+          <option value="Chicken Burger">Chicken Burger</option>
+          <option value="Lemonade">Lemonade</option>
+          <option value="Iced Coffee">Iced Coffee</option>
+        </select>
+        <div class="invalid-feedback">Please select a menu item.</div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit Order</button>
+    </form>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Filtering menu items
+  const filterButtons = document.querySelectorAll('[data-filter]');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      button.classList.add('active');
+
+      const filter = button.getAttribute('data-filter');
+
+      menuItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Bootstrap form validation
+  (() => {
+    'use strict'
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  })();
+</script>
+</body>
+</html>

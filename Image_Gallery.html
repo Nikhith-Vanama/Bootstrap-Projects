@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Image Gallery with Lightbox</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .gallery-img {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <h2 class="text-center mb-4">Image Gallery</h2>
+  <div class="row g-3">
+    <!-- Gallery Images -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <img src="https://via.placeholder.com/600x400" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-image="https://via.placeholder.com/1200x800" alt="Image 1">
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <img src="https://via.placeholder.com/600x400?text=2" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-image="https://via.placeholder.com/1200x800?text=2" alt="Image 2">
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <img src="https://via.placeholder.com/600x400?text=3" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-image="https://via.placeholder.com/1200x800?text=3" alt="Image 3">
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <img src="https://via.placeholder.com/600x400?text=4" class="img-fluid gallery-img" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-image="https://via.placeholder.com/1200x800?text=4" alt="Image 4">
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body text-center p-0">
+        <img src="" id="lightboxImage" class="img-fluid rounded" alt="Enlarged Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS + Lightbox Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Lightbox functionality
+  const modalImg = document.getElementById('lightboxImage');
+  document.querySelectorAll('.gallery-img').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.getAttribute('data-bs-image');
+    });
+  });
+</script>
+</body>
+</html>
