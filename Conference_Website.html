@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Conference</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="#">Conf2025</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#schedule">Schedule</a></li>
+        <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Schedule Section with Tabs -->
+  <section id="schedule" class="mb-5">
+    <h2 class="mb-4">Event Schedule</h2>
+
+    <ul class="nav nav-tabs" id="scheduleTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="day1-tab" data-bs-toggle="tab" data-bs-target="#day1" 
+          type="button" role="tab" aria-controls="day1" aria-selected="true">Day 1</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="day2-tab" data-bs-toggle="tab" data-bs-target="#day2" 
+          type="button" role="tab" aria-controls="day2" aria-selected="false">Day 2</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="day3-tab" data-bs-toggle="tab" data-bs-target="#day3" 
+          type="button" role="tab" aria-controls="day3" aria-selected="false">Day 3</button>
+      </li>
+    </ul>
+
+    <div class="tab-content mt-3" id="scheduleTabsContent">
+      <!-- Day 1 Schedule -->
+      <div class="tab-pane fade show active" id="day1" role="tabpanel" aria-labelledby="day1-tab">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>09:00 - 10:00</strong>: Opening Keynote by <a href="#" data-bs-toggle="modal" data-bs-target="#speaker1Modal">Dr. Alice Johnson</a>
+          </li>
+          <li class="list-group-item">
+            <strong>10:15 - 11:00</strong>: Modern Web Development with React by <a href="#" data-bs-toggle="modal" data-bs-target="#speaker2Modal">Mr. John Smith</a>
+          </li>
+          <li class="list-group-item">
+            <strong>11:15 - 12:00</strong>: AI Ethics Panel
+          </li>
+        </ul>
+      </div>
+
+      <!-- Day 2 Schedule -->
+      <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>09:00 - 10:00</strong>: Cloud Computing Trends by <a href="#" data-bs-toggle="modal" data-bs-target="#speaker3Modal">Ms. Clara Lee</a>
+          </li>
+          <li class="list-group-item">
+            <strong>10:15 - 11:00</strong>: Cybersecurity Best Practices by <a href="#" data-bs-toggle="modal" data-bs-target="#speaker4Modal">Mr. Mike Brown</a>
+          </li>
+          <li class="list-group-item">
+            <strong>11:15 - 12:00</strong>: Networking Break
+          </li>
+        </ul>
+      </div>
+
+      <!-- Day 3 Schedule -->
+      <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>09:00 - 10:00</strong>: Closing Remarks by <a href="#" data-bs-toggle="modal" data-bs-target="#speaker1Modal">Dr. Alice Johnson</a>
+          </li>
+          <li class="list-group-item">
+            <strong>10:15 - 11:00</strong>: Future of Tech Panel
+          </li>
+          <li class="list-group-item">
+            <strong>11:15 - 12:00</strong>: Farewell Lunch
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speakers Section -->
+  <section id="speakers" class="mb-5">
+    <h2 class="mb-4">Speakers</h2>
+    <div class="row g-4">
+      <!-- Speaker 1 -->
+      <div class="col-md-3 text-center">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alice Johnson" class="img-fluid rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;" />
+        <h5>Dr. Alice Johnson</h5>
+        <p>AI Researcher</p>
+        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#speaker1Modal">View Profile</button>
+      </div>
+
+      <!-- Speaker 2 -->
+      <div class="col-md-3 text-center">
+        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="John Smith" class="img-fluid rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;" />
+        <h5>Mr. John Smith</h5>
+        <p>Frontend Developer</p>
+        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#speaker2Modal">View Profile</button>
+      </div>
+
+      <!-- Speaker 3 -->
+      <div class="col-md-3 text-center">
+        <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Clara Lee" class="img-fluid rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;" />
+        <h5>Ms. Clara Lee</h5>
+        <p>Cloud Architect</p>
+        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#speaker3Modal">View Profile</button>
+      </div>
+
+      <!-- Speaker 4 -->
+      <div class="col-md-3 text-center">
+        <img src="https://randomuser.me/api/portraits/men/49.jpg" alt="Mike Brown" class="img-fluid rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;" />
+        <h5>Mr. Mike Brown</h5>
+        <p>Security Expert</p>
+        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#speaker4Modal">View Profile</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section id="register" class="mb-5">
+    <h2 class="mb-4">Register</h2>
+    <form>
+      <div class="mb-3">
+        <label for="regName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="regName" required />
+      </div>
+      <div class="mb-3">
+        <label for="regEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="regEmail" required />
+      </div>
+      <div class="mb-3">
+        <label for="regTicket" class="form-label">Ticket Type</label>
+        <select class="form-select" id="regTicket" required>
+          <option value="" selected disabled>Select a ticket</option>
+          <option value="standard">Standard - $99</option>
+          <option value="vip">VIP - $199</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Registration</button>
+    </form>
+  </section>
+
+</div>
+
+<!-- Speaker Modals -->
+
+<!-- Speaker 1 Modal -->
+<div class="modal fade" id="speaker1Modal" tabindex="-1" aria-labelledby="speaker1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="speaker1Label">Dr. Alice Johnson</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alice Johnson" class="img-fluid rounded mb-3" />
+        <p>Dr. Alice Johnson is a leading AI researcher focusing on ethical AI and machine learning.</p>
+        <ul>
+          <li>PhD in Computer Science</li>
+          <li>20+ years experience</li>
+          <li>Published 50+ papers</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Website</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Speaker 2 Modal -->
+<div class="modal fade" id="speaker2Modal" tabindex="-1" aria-labelledby="speaker2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="speaker2Label">Mr. John Smith</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="John Smith" class="img-fluid rounded mb-3" />
+        <p>John Smith is a frontend developer specializing in React and modern web technologies.</p>
+        <ul>
+          <li>10 years experience</li>
+          <li>Speaker at various conferences</li>
+          <li>Open source contributor</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Speaker 3 Modal -->
+<div class="modal fade" id="speaker3Modal" tabindex="-1" aria-labelledby="speaker3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="speaker3Label">Ms. Clara Lee</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Clara Lee" class="img-fluid rounded mb-3" />
+        <p>Clara Lee is a cloud architect with expertise in AWS and distributed systems.</p>
+        <ul>
+          <li>Certified AWS Solutions Architect</li>
+          <li>12 years industry experience</li>
+          <li>Keynote speaker at cloud events</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">LinkedIn</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Speaker 4 Modal -->
+<div class="modal fade" id="speaker4Modal" tabindex="-1" aria-labelledby="speaker4Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="speaker4Label">Mr. Mike Brown</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://randomuser.me/api/portraits/men/49.jpg" alt="Mike Brown" class="img-fluid rounded mb-3" />
+        <p>Mike Brown is a cybersecurity expert helping companies protect their digital assets.</p>
+        <ul>
+          <li>15 years cybersecurity experience</li>
+          <li>Author of multiple books</li>
+          <li>Security consultant</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Twitter</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
