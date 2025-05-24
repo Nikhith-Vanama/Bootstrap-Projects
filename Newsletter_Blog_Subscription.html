@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subscribe to Our Newsletter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Jumbotron -->
+<section class="bg-primary text-white text-center py-5 mb-5">
+  <div class="container">
+    <h1 class="display-4">Stay Updated!</h1>
+    <p class="lead">Subscribe to our newsletter and blog for the latest updates and exclusive content.</p>
+
+    <form id="subscribeForm" class="d-flex justify-content-center mt-4" style="max-width: 500px; margin: 0 auto;">
+      <input type="email" class="form-control me-2" id="emailInput" placeholder="Enter your email" required />
+      <button class="btn btn-light" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- Toast Container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+  <div id="confirmationToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Thanks for subscribing! 🎉
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const form = document.getElementById('subscribeForm');
+  const emailInput = document.getElementById('emailInput');
+  const toastEl = document.getElementById('confirmationToast');
+  const toast = new bootstrap.Toast(toastEl);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if(emailInput.checkValidity()) {
+      // Show toast confirmation
+      toast.show();
+
+      // Reset form input
+      form.reset();
+    } else {
+      emailInput.reportValidity();
+    }
+  });
+</script>
+
+</body>
+</html>
